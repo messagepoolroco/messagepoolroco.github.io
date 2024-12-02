@@ -1,46 +1,775 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demo HTML Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        main {
-            padding: 20px;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="LLM-Powered Multi-Agent Proactive Communication System for Embodied Intelligence">
+  <meta name="keywords" content="LLM, Multi-agent, Embodied Intelligence">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LLM-Powered Multi-Agent Proactive Communication System for Embodied Intelligence</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <!-- 在其他link标签之后添加 -->
+  <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/recharts/umd/Recharts.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Demo Page</h1>
-    </header>
-    <main>
-        <h2>About This Page</h2>
-        <p>This is a simple HTML page created as a demo. It includes a header, a main content area, and a footer.</p>
-    </main>
-    <footer>
-        <p>&copy; 2023 Demo Page</p>
-    </footer>
+
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav> -->
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">LLM-Powered Multi-Agent Proactive Communication System for Embodied Intelligence</h1>
+          <!-- <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
+            </span>
+          </div> -->
+
+          <!-- <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Washington,</span>
+            <span class="author-block"><sup>2</sup>Google Research</span>
+          </div> -->
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Submitted to LM4Plan @ AAAI 2025</span>
+          </div>
+
+<!-- 
+          <div class="column has-text-centered">
+            <div class="publication-links"> -->
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span> -->
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span> -->
+                  <!-- </a>
+            </div> -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="has-text-centered">
+        <img src="./static/images/overview.jpg" alt="Project Overview" width="70%" style="margin: 0 auto; display: block;">
+        <br>
+        <h2 class="subtitle">
+          Robots execute decisions based on collected and self-generated information, communicated through the message pool. The message pool stores initial setup information, environmental data, and task-specific data, which robots actively query and update. The manager oversees data management, including writing, deleting, reading, and checking data, ensuring data integrity and accessibility for effective decision-making and task execution.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
+        free-viewpoint
+        portraits.
+      </h2>
+    </div>
+  </div>
+</section> -->
+
+
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/steve.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/chair-tp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/shiba.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/fullbody.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/blueshirt.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/mask.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/coffee.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/toby2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Multi-robot collaboration through large language models (LLMs) faces significant challenges in information sharing and coordinated decision-making, particularly as the number of robots increases. To address these limitations, we develop a novel framework that enables proactive information seeking through a centralized message pool architecture, where robots actively retrieve and utilize information rather than passively relay data. 
+          </p>
+          <p>
+            OWe focus on complex coordination tasks that require multiple robots to maintain consistent shared context while making independent decisions. Our key innovation, a hierarchical access protocol with code-based queries, achieves significantly better information retention than dialogue-based approaches (30% vs 55% forgetting rate after 20 rounds). Experiments in both simulation and physical environments demonstrate that our framework achieves 24% faster task completion and 32% lower error rates compared to baseline systems, while successfully generalizing across varying task complexities involving 2-5 robots.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Communication. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Message Pool Communication</h2>
+        
+        <!-- Image -->
+        <div class="content has-text-centered">
+          <img src="./static/images/communication.jpg" alt="Communication Architecture" width="100%">
+        </div>
+        
+        <!-- Description -->
+        <div class="content has-text-justified">
+          <p>
+            Our framework introduces a novel message pool architecture that facilitates efficient multi-robot communication and information sharing. The message pool serves as a centralized information hub with two main components:
+          </p>
+          
+          <h3 class="title is-4">Set-up Information</h3>
+          <p>
+            The set-up information section stores essential static data including:
+            <ul>
+              <li><strong>Task Info:</strong> Detailed specifications of tasks to be performed</li>
+              <li><strong>Environmental Info:</strong> Data about the operational environment</li>
+              <li><strong>Initial Info:</strong> Starting configurations and parameters</li>
+            </ul>
+          </p>
+
+          <h3 class="title is-4">Updating Information</h3>
+          <p>
+            The current robots information section maintains dynamic data that reflects the ongoing state of operations:
+            <ul>
+              <li><strong>Active Querying:</strong> Robots proactively retrieve relevant information using code-based queries</li>
+              <li><strong>Data Management:</strong> The manager component oversees data operations including writing, deleting, reading, and verification</li>
+              <li><strong>Real-time Updates:</strong> Continuous updates of robot states and task progress</li>
+            </ul>
+          </p>
+          
+          <p>
+            This architecture enables robots to maintain a consistent shared context while making independent decisions, significantly reducing information loss compared to traditional dialogue-based approaches.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section style="padding: 20px; max-width: 1200px; margin: 0 auto;">
+  <style>
+    .task-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 10px;
+    }
+    
+    .task-btn {
+        background-color: #f3f4f6;
+        border: 1px solid #e5e7eb;
+        color: #374151;
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        min-width: 100px;
+    }
+    
+    .task-btn:hover {
+        background-color: #e5e7eb;
+        border-color: #d1d5db;
+    }
+    
+    .task-btn.active {
+        background-color: #3b82f6;
+        border-color: #2563eb;
+        color: white;
+    }
+    
+    .chart-container {
+        margin-bottom: 40px;
+    }
+    
+    .chart-title {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #1f2937;
+    }
+  </style>
+  <div class="chart-container">
+    <div class="chart-title">Average Steps Comparison</div>
+    <div class="task-buttons">
+        <button onclick="switchStepsTask('Unboxing')" class="task-btn active" data-chart="steps">Unboxing</button>
+        <button onclick="switchStepsTask('Table')" class="task-btn" data-chart="steps">Table</button>
+        <button onclick="switchStepsTask('Drink')" class="task-btn" data-chart="steps">Drink</button>
+        <button onclick="switchStepsTask('Cube')" class="task-btn" data-chart="steps">Cube</button>
+    </div>
+    <div id="stepsChart" style="width: 100%; height: 400px; margin-top: 20px;"></div>
+  </div>
+
+  <div class="chart-container">
+      <div class="chart-title">Success Rate Comparison</div>
+      <div class="task-buttons">
+          <button onclick="switchRateTask('Unboxing')" class="task-btn active" data-chart="rate">Unboxing</button>
+          <button onclick="switchRateTask('Table')" class="task-btn" data-chart="rate">Table</button>
+          <button onclick="switchRateTask('Drink')" class="task-btn" data-chart="rate">Drink</button>
+          <button onclick="switchRateTask('Cube')" class="task-btn" data-chart="rate">Cube</button>
+      </div>
+      <div id="rateChart" style="width: 100%; height: 400px; margin-top: 20px;"></div>
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
+  <script>
+      const stepsChart = echarts.init(document.getElementById('stepsChart'));
+      const rateChart = echarts.init(document.getElementById('rateChart'));
+
+      // Data for steps chart
+      const stepsData = {
+        'Unboxing': {
+            'Ours': [5.8, 5.3, 6.2, 6.5],
+            'RoCo': [7.5, 7.0, 6.8, 7.2],
+            'LLaMAC': [8.0, 7.5, 7.3, 7.8],
+            'ReAd': [8.5, 8.0, 7.8, 8.2],
+            'MindAgent': [8.5, 8.1, 7.9, 8.1],
+            'ProAgent': [8.6, 8.0, 7.5, 8.1],
+            'Zero-shot LLM': [9.0, 8.5, 8.3, 8.7]
+        },
+        'Table': {
+            'Ours': [7.1, 6.6, 6.9, 7.5],
+            'RoCo': [12.0, 11.5, 11.2, 11.8],
+            'LLaMAC': [13.5, 13.0, 12.8, 13.2],
+            'ReAd': [14.0, 13.5, 13.2, 13.8],
+            'MindAgent': [14.1, 13.5, 13.1, 13.9],
+            'ProAgent': [14.2, 13.0, 13.1, 13.5],
+            'Zero-shot LLM': [14.5, 14.0, 13.8, 14.2]
+        },
+        'Drink': {
+            'Ours': [7.3, 6.1, 6.2, 3.0],
+            'RoCo': [3.4, 3.2, 3.1, 3.3],
+            'LLaMAC': [4.0, 3.8, 3.7, 3.9],
+            'ReAd': [4.5, 4.3, 4.2, 4.4],
+            'MindAgent': [4.5, 4.3, 4.5, 4.3],
+            'ProAgent': [4.7, 4.1, 4.1, 4.6],
+            'Zero-shot LLM': [5.0, 4.8, 4.7, 4.9]
+        },
+        'Cube': {
+            'Ours': [5.5, 5.5, 4.9, 5.3],
+            'RoCo': [6.0, 5.8, 5.6, 5.9],
+            'LLaMAC': [6.5, 6.3, 6.1, 6.4],
+            'ReAd': [7.0, 6.8, 6.6, 6.9],
+            'MindAgent': [7.0, 6.8, 6.7, 6.9],
+            'ProAgent': [7.3, 6.5, 6.7, 7.2],
+            'Zero-shot LLM': [7.5, 7.3, 7.1, 7.4]
+        }
+      };
+
+      // Data for success rate chart
+      const rateData = {
+        'Unboxing': {
+            'Ours': [1.00, 1.00, 1.00, 1.00],
+            'RoCo': [1.00, 1.00, 1.00, 1.00],
+            'LLaMAC': [0.98, 0.98, 0.98, 0.98],
+            'ReAd': [0.95, 0.95, 0.95, 0.95],
+            'MindAgent': [0.94, 0.95, 0.93, 0.93],
+            'ProAgent': [0.94, 0.93, 0.94, 0.96],
+            'Zero-shot LLM': [0.90, 0.90, 0.90, 0.90]
+        },
+        'Table': {
+            'Ours': [0.83, 0.91, 0.93, 0.82],
+            'RoCo': [0.94, 0.89, 0.87, 0.87],
+            'LLaMAC': [0.92, 0.89, 0.87, 0.85],
+            'ReAd': [0.88, 0.86, 0.84, 0.82],
+            'MindAgent': [0.84, 0.86, 0.85, 0.81],
+            'ProAgent': [0.86, 0.83, 0.83, 0.83],
+            'Zero-shot LLM': [0.80, 0.78, 0.76, 0.74]
+        },
+        'Drink': {
+            'Ours': [0.83, 0.89, 0.82, 0.83],
+            'RoCo': [0.98, 1.00, 0.98, 1.00],
+            'LLaMAC': [0.98, 0.98, 0.98, 0.98],
+            'ReAd': [0.95, 0.95, 0.95, 0.95],
+            'MindAgent': [0.96, 0.96, 0.94, 0.94],
+            'ProAgent': [0.94, 0.92, 0.95, 0.94],
+            'Zero-shot LLM': [0.90, 0.90, 0.90, 0.90]
+        },
+        'Cube': {
+            'Ours': [0.79, 0.82, 0.90, 0.76],
+            'RoCo': [0.95, 0.92, 0.90, 0.89],
+            'LLaMAC': [0.95, 0.92, 0.90, 0.88],
+            'ReAd': [0.92, 0.90, 0.88, 0.87],
+            'MindAgent': [0.93, 0.90, 0.87, 0.85],
+            'ProAgent': [0.90, 0.93, 0.89, 0.87],
+            'Zero-shot LLM': [0.85, 0.83, 0.80, 0.78]
+        }
+      };
+
+      function updateStepsChart(task) {
+          const methods = Object.keys(stepsData[task]);
+          const chartData = methods.map(method => ({
+              name: method,
+              type: 'bar',
+              data: stepsData[task][method],
+              barGap: 0
+          }));
+
+          stepsChart.setOption({
+              title: { 
+                  text: `Average Steps - ${task} Task`,
+                  left: 'center'
+              },
+              tooltip: { trigger: 'axis' },
+              legend: {
+                  data: methods,
+                  top: '30px'
+              },
+              xAxis: {
+                  type: 'category',
+                  data: ['ChatGPT-3.5', 'ChatGPT-4', 'LLaMA-3.1', 'Gemini-2']
+              },
+              yAxis: {
+                  type: 'value'
+              },
+              series: chartData
+          });
+      }
+
+      function updateRateChart(task) {
+          const methods = Object.keys(rateData[task]);
+          const chartData = methods.map(method => ({
+              name: method,
+              type: 'bar',
+              data: rateData[task][method],
+              barGap: 0
+          }));
+
+          rateChart.setOption({
+              title: { 
+                  text: `Success Rate - ${task} Task`,
+                  left: 'center'
+              },
+              tooltip: { trigger: 'axis' },
+              legend: {
+                  data: methods,
+                  top: '30px'
+              },
+              xAxis: {
+                  type: 'category',
+                  data: ['ChatGPT-3.5', 'ChatGPT-4', 'LLaMA-3.1', 'Gemini-2']
+              },
+              yAxis: {
+                  type: 'value',
+                  max: 1.0
+              },
+              series: chartData
+          });
+      }
+
+      function switchStepsTask(task) {
+        updateStepsChart(task);
+        // Update active button state
+        document.querySelectorAll('[data-chart="steps"]').forEach(btn => {
+            btn.classList.remove('active');
+            if(btn.textContent === task) btn.classList.add('active');
+        });
+      }
+      
+      function switchRateTask(task) {
+          updateRateChart(task);
+          // Update active button state
+          document.querySelectorAll('[data-chart="rate"]').forEach(btn => {
+              btn.classList.remove('active');
+              if(btn.textContent === task) btn.classList.add('active');
+          });
+      }
+
+      // Initialize with Unboxing task
+      updateStepsChart('Unboxing');
+      updateRateChart('Unboxing');
+
+      // Handle window resize
+      window.addEventListener('resize', function() {
+          stepsChart.resize();
+          rateChart.resize();
+      });
+  </script>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- <div class="columns is-centered"> -->
+
+      <!-- Visual Effects. -->
+      <!-- <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Visual Effects</h2>
+          <p>
+            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
+            would be impossible without nerfies since it would require going through a wall.
+          </p>
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dollyzoom-stacked.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div> -->
+      <!--/ Visual Effects. -->
+
+      <!-- Matting. -->
+      <!-- <div class="column">
+        <h2 class="title is-3">Matting</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p>
+              As a byproduct of our method, we can also solve the matting problem by ignoring
+              samples that fall outside of a bounding box during rendering.
+            </p>
+            <video id="matting-video" controls playsinline height="100%">
+              <source src="./static/videos/matting.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div> -->
+    <!-- </div> -->
+    <!--/ Matting. -->
+
+    <!-- Animation. -->
+    <!-- <div class="columns is-centered"> -->
+      <!-- <div class="column is-full-width"> -->
+        <!-- <h2 class="title is-3">Animation</h2> -->
+
+        <!-- Interpolating. -->
+        <!-- <h3 class="title is-4">Interpolating states</h3> -->
+        <!-- <div class="content has-text-justified">
+          <p>
+            We can also animate the scene by interpolating the deformation latent codes of two input
+            frames. Use the slider here to linearly interpolate between the left frame and the right
+            frame.
+          </p>
+        </div> -->
+        <!-- <div class="columns is-vcentered interpolation-panel">
+          <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_start.jpg"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+            <p>Start Frame</p>
+          </div>
+          <div class="column interpolation-video-column">
+            <div id="interpolation-image-wrapper">
+              Loading...
+            </div>
+            <input class="slider is-fullwidth is-large is-info"
+                   id="interpolation-slider"
+                   step="1" min="0" max="100" value="0" type="range">
+          </div>
+          <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_end.jpg"
+                 class="interpolation-image"
+                 alt="Interpolation end reference image."/>
+            <p class="is-bold">End Frame</p>
+          </div>
+        </div> -->
+        <!-- <br/> -->
+        <!--/ Interpolating. -->
+
+        <!-- Re-rendering. -->
+        <!-- <h3 class="title is-4">Re-rendering the input video</h3>
+        <div class="content has-text-justified">
+          <p>
+            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
+            viewpoint such as a stabilized camera by playing back the training deformations.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 width="75%">
+            <source src="./static/videos/replay.mp4"
+                    type="video/mp4">
+          </video>
+        </div> -->
+        <!--/ Re-rendering. -->
+
+      <!-- </div> -->
+    <!-- </div> -->
+    <!--/ Animation. -->
+
+
+    <!-- Concurrent Work. -->
+    <!-- <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Links</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            There's a lot of excellent work that was introduced around the same time as ours.
+          </p>
+          <p>
+            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
+          </p>
+          <p>
+            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
+            both use deformation fields to model non-rigid scenes.
+          </p>
+          <p>
+            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
+          </p>
+          <p>
+            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Concurrent Work. -->
+
+  </div>
+</section>
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Nerfies: Deformable Neural Radiance Fields},
+  journal   = {ICCV},
+  year      = {2021},
+}</code></pre>
+  </div>
+</section> -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <!-- <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a> -->
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Website template adapted from  project. <a
+              href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> project.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
